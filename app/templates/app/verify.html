@@ -1,0 +1,21 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}OTP Verification {% endblock title %}
+{% block main-content %}
+<div class="container">
+    <div class="row my-3">
+        <div class="col-sm-6 offset-sm-3"> 
+            <h3>OTP Verification</h3>
+                <p>Verify The OTP !! Send to {{email}}</p>
+                <div>
+                    {% comment %} OTP:{{otp}} {% endcomment %}
+                    <form method="post" action="">
+                        {% csrf_token %}
+                        <input type="text" name="otp" id="otp" class="form-control">
+                    </form >
+                    <a href="#" class="btn btn-warning shadow px-5 py-2 ms-4 mt-3">Resend</a>
+                </div>
+        </div>
+    </div>
+</div>
+{% endblock main-content %}
